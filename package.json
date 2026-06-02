@@ -1,0 +1,31 @@
+{
+  "name": "web-oscar",
+  "version": "1.0.0",
+  "description": "Sitio web oficial de Oscar Leonel segura Valencia",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SV20008/Web-Oscar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/SV20008/Web-Oscar/issues"
+  },
+  "homepage": "https://github.com/SV20008/Web-Oscar#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "scripts": {
+  "start": "node server.js",
+  "dev": "nodemon server.js"
+  }
+}
