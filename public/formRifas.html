@@ -43,29 +43,40 @@
         </div>
     </nav>
 
-    <form class=" formulario-rifa">
+    <form class=" formulario-rifa" id="formRifas">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Articulo a rifar:</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        </div>
-        <div class="mb-3">
-            <select class="form-select" aria-label="Default select example">
-            <option selected>Promovida por:</option>
-            <option value="1">Sociedad de Embajadores</option>
-            <option value="2">Sociedad de Jovenes</option>
-            <option value="3">Sociedad de Colaboradoras</option>
-            </select>
+            <input type="text" class="form-control" id="articulo">
         </div>
         <div class="input-group mb-3">
-            <span class="input-group-text">$</span>
-            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <label class="input-group-text" for="inputGroupSelect01">Promovida por:</label>
+                <select class="form-select" id="inputGroupSelect01">
+                    <option selected>......</option>
+                    <option>Sociedad de jovenes</option>
+                    <option>Sociedad de embajadores</option>
+                    <option>Sociedad de colaboradoras</option>
+                </select>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">valor de la lista ($)</span>
+            <input 
+                type="number"
+                class="form-control"
+                id="valorlista"
+                min="1"
+                step="1"
+                aria-label="Amount">
             <span class="input-group-text">.00</span>
         </div>
-            <div class="mb-3">
-                <label for="fecha" class="form-label">Fecha a rifar</label>
+        <div class="mb-3">
+                <label for="fecha" class="form-label">Fecha:</label>
                 <input type="date" class="form-control" id="fecha">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Imagen:</label>
+            <input class="form-control" type="file" id="imagen">
+        </div>
+        <button type="submit" class="btn btn-primary">Generar</button>
     </form>
 
     <footer class="bg-dark text-white text-center p-3 mt-5">
@@ -73,5 +84,6 @@
             © 2026 Oscar Segura. Todos los derechos reservados.
         </p>
     </footer>
+    <script src="js/form.js"></script>
 </body>
 </html>
