@@ -6,14 +6,6 @@ const PizZip = require("pizzip");
 const Docxtemplater = require("docxtemplater");
 const ImageModule = require("docxtemplater-image-module-free");
 
-    const { exec } = require("child_process");
-
-    exec("libreoffice --version", (error, stdout, stderr) => {
-        console.log("ERROR:", error);
-        console.log("STDOUT:", stdout);
-        console.log("STDERR:", stderr);
-    });
-    
 const app = express();
 
 const upload = multer({
