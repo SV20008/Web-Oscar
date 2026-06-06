@@ -29,10 +29,7 @@
                 <a class="nav-link active" aria-current="page" href="formRifas.html">Crear rifas</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="pdf/Coros_iglesia1.pdf">Coros de iglesia</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Grabaciones de eventos</a>
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
             <form class="d-flex mt-3" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
@@ -47,6 +44,7 @@
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Articulo a rifar:</label>
             <input type="text" class="form-control" id="articulo">
+            <small id="errorArticulo" class="text-danger"></small>
         </div>
         <div class="input-group mb-3">
             <label class="input-group-text" for="inputGroupSelect01">Promovida por:</label>
@@ -57,6 +55,7 @@
                     <option>Sociedad de colaboradoras</option>
                 </select>
         </div>
+        <small id="errorPromotor" class="text-danger"></small>
         <div class="input-group mb-3">
             <span class="input-group-text">valor de la lista ($)</span>
             <input 
@@ -68,13 +67,16 @@
                 aria-label="Amount">
             <span class="input-group-text">.00</span>
         </div>
+        <small id="errorValor" class="text-danger"></small>
         <div class="mb-3">
                 <label for="fecha" class="form-label">Fecha:</label>
                 <input type="date" class="form-control" id="fecha">
+                <small id="errorFecha" class="text-danger"></small>
         </div>
         <div class="mb-3">
             <label for="formFile" class="form-label">Imagen:</label>
-            <input class="form-control" type="file" id="imagen">
+            <input class="form-control" type="file" id="imagen" accept=".jpg,.jpeg,.png">
+            <small id="errorImagen" class="text-danger"></small>
         </div>
         <button type="submit" class="btn btn-primary">Generar</button>
     </form>
@@ -84,6 +86,57 @@
             © 2026 Oscar Segura. Todos los derechos reservados.
         </p>
     </footer>
+    <!-- Modal PDF -->
+    <div class="modal fade" id="pdfModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        Documento generado
+                    </h5>
+
+                    <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                    </button>
+                </div>
+
+                <div class="modal-body text-center">
+                    <h4>Descarga lista</h4>
+
+                    <p class="mt-3">
+                        ¿Quieres convertir tu documento a PDF?
+                    </p>
+
+                    <small class="text-muted">
+                        Se abrirá iLovePDF para que cargues el archivo descargado.
+                    </small>
+                </div>
+
+                <div class="modal-footer">
+
+                    <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                        No
+                    </button>
+
+                    <button type="button"
+                        class="btn btn-primary"
+                        id="convertPdfBtn">
+                        Sí
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
     <script src="js/form.js"></script>
+
 </body>
 </html>

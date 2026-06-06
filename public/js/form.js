@@ -1,33 +1,89 @@
 document.getElementById("formRifas").addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    // Limpiar errores anteriores
+    document.getElementById("errorArticulo").textContent = "";
+    document.getElementById("errorPromotor").textContent = "";
+    document.getElementById("errorValor").textContent = "";
+    document.getElementById("errorFecha").textContent = "";
+    document.getElementById("errorImagen").textContent = "";
+
+    const articulo = document.getElementById("articulo").value.trim();
+    const promotor = document.getElementById("inputGroupSelect01").value;
+    const valor = document.getElementById("valorlista").value.trim();
+    const fecha = document.getElementById("fecha").value;
+    const archivo = document.getElementById("imagen").files[0];
+
+    let hayErrores = false;
+
+    // Validar artículo
+    if (articulo === "") {
+        document.getElementById("errorArticulo").textContent =
+            "Debe ingresar el artículo a rifar.";
+        hayErrores = true;
+    }
+
+    // Validar promotor
+    if (promotor === "......") {
+        document.getElementById("errorPromotor").textContent =
+            "Debe seleccionar quién promueve la rifa.";
+        hayErrores = true;
+    }
+
+    // Validar valor
+    if (valor === "") {
+        document.getElementById("errorValor").textContent =
+            "Debe ingresar el valor de la lista.";
+        hayErrores = true;
+    } else if (!Number.isInteger(Number(valor))) {
+        document.getElementById("errorValor").textContent =
+            "Solo se permiten números enteros.";
+        hayErrores = true;
+    }
+
+    // Validar fecha
+    if (fecha === "") {
+        document.getElementById("errorFecha").textContent =
+            "Debe seleccionar una fecha.";
+        hayErrores = true;
+    }
+
+    // Validar imagen
+    if (!archivo) {
+        document.getElementById("errorImagen").textContent =
+            "Debe cargar una imagen.";
+        hayErrores = true;
+    } else {
+        const extensionesPermitidas = [
+            "image/jpeg",
+            "image/png"
+        ];
+
+        if (!extensionesPermitidas.includes(archivo.type)) {
+            document.getElementById("errorImagen").textContent =
+                "Solo se permiten imágenes JPG, JPEG o PNG.";
+            hayErrores = true;
+        }
+    }
+
+    if (hayErrores) {
+        return;
+    }
+
     const formData = new FormData();
 
-    formData.append(
-        "articulo",
-        document.getElementById("articulo").value
-    );
+    formData.append("articulo", articulo);
 
     formData.append(
         "promotor",
         document.getElementById("inputGroupSelect01").selectedOptions[0].text
     );
 
-    formData.append(
-        "valor",
-        document.getElementById("valorlista").value
-    );
+    formData.append("valor", valor);
 
-    formData.append(
-        "fecha",
-        document.getElementById("fecha").value
-    );
+    formData.append("fecha", fecha);
 
-    const archivo = document.getElementById("imagen").files[0];
-
-    if (archivo) {
-        formData.append("imagen", archivo);
-    }
+    formData.append("imagen", archivo);
 
     try {
         const res = await fetch("/generar", {
@@ -48,11 +104,37 @@ document.getElementById("formRifas").addEventListener("submit", async (e) => {
         const a = document.createElement("a");
         a.href = url;
         a.download = "rifa.docx";
+
         document.body.appendChild(a);
         a.click();
         a.remove();
 
+        window.URL.revokeObjectURL(url);
+
+        // Limpiar formulario
+        document.getElementById("formRifas").reset();
+
+        // Volver al primer campo
+        document.getElementById("articulo").focus();
+
+        // Mostrar modal
+        setTimeout(() => {
+            const modal = new bootstrap.Modal(
+                document.getElementById("pdfModal")
+            );
+
+            modal.show();
+        }, 1000);
+
     } catch (error) {
         console.error(error);
     }
+});
+
+document.getElementById("convertPdfBtn").addEventListener("click", () => {
+    window.location.href = "https://www.ilovepdf.com/word_to_pdf";
+});
+
+window.addEventListener("load", () => {
+    document.getElementById("articulo").focus();
 });

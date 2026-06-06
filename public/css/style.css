@@ -7,3 +7,10 @@
     margin-left: 30px;
     margin-right: 30px;
 }
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #38bdf8 !important;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.5) !important;
+    transition: all 0.2s ease;
+}
