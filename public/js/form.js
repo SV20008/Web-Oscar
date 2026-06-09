@@ -128,7 +128,7 @@ document.getElementById("formRifas").addEventListener("submit", async (e) => {
             );
 
             modal.show();
-        }, 6000);
+        }, 8000);
 
     } catch (error) {
         console.error(error);
