@@ -113,6 +113,11 @@ document.getElementById("formRifas").addEventListener("submit", async (e) => {
         a.click();
         a.remove();
 
+        //funcionalidad del nuevo boton convertir a pdf
+        const btnPdf = document.getElementById("btnPdf");
+        btnPdf.disabled = false;
+        btnPdf.classList.add("btn-pdf-activo");
+
         window.URL.revokeObjectURL(url);
 
         // Limpiar formulario
@@ -135,10 +140,15 @@ document.getElementById("formRifas").addEventListener("submit", async (e) => {
     }
 });
 
-document.getElementById("convertPdfBtn").addEventListener("click", () => {
+/* document.getElementById("convertPdfBtn").addEventListener("click", () => {
     window.location.href = "https://www.ilovepdf.com/word_to_pdf";
-});
+}); */
 
 window.addEventListener("load", () => {
     document.getElementById("articulo").focus();
+});
+
+
+document.getElementById("btnPdf").addEventListener("click", () => {
+    window.location.href = "https://www.ilovepdf.com/word_to_pdf";
 });
