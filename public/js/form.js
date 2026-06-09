@@ -101,9 +101,13 @@ document.getElementById("formRifas").addEventListener("submit", async (e) => {
 
         const url = window.URL.createObjectURL(blob);
 
+        const nombreArchivo = articulo
+            .replace(/[\\/:*?"<>|]/g, "")
+            .trim();
+
         const a = document.createElement("a");
         a.href = url;
-        a.download = "rifa.docx";
+        a.download = `Rifa-${nombreArchivo}.docx`;
 
         document.body.appendChild(a);
         a.click();
@@ -124,7 +128,7 @@ document.getElementById("formRifas").addEventListener("submit", async (e) => {
             );
 
             modal.show();
-        }, 1000);
+        }, 4000);
 
     } catch (error) {
         console.error(error);
