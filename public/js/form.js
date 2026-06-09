@@ -115,7 +115,7 @@ document.getElementById("formRifas").addEventListener("submit", async (e) => {
 
         //funcionalidad del nuevo boton convertir a pdf
         const btnPdf = document.getElementById("btnPdf");
-        btnPdf.disabled = false;
+        btnPdf.classList.remove("d-none");
         btnPdf.classList.add("btn-pdf-activo");
 
         window.URL.revokeObjectURL(url);
