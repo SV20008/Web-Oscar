@@ -1,3 +1,7 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
 .carrusel-principal{
     margin-top: 90px;
 }
@@ -32,4 +36,27 @@
     100% {
         box-shadow: 0 0 5px rgba(25, 135, 84, 0.4);
     }
+}
+
+.resultado-encontrado {
+    border: 2px solid #28a745;
+    border-radius: 8px;
+    padding: 5px;
+    animation: parpadeoResultado 1s infinite;
+}
+
+@keyframes parpadeoResultado {
+
+    0% {
+        box-shadow: 0 0 5px #28a745;
+    }
+
+    50% {
+        box-shadow: 0 0 20px #28a745;
+    }
+
+    100% {
+        box-shadow: 0 0 5px #28a745;
+    }
+
 }

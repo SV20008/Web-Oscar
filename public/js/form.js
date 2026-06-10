@@ -152,3 +152,4 @@ window.addEventListener("load", () => {
 document.getElementById("btnPdf").addEventListener("click", () => {
     window.location.href = "https://www.ilovepdf.com/word_to_pdf";
 });
+
