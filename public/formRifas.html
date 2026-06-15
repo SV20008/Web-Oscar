@@ -16,7 +16,6 @@
         <div class="container-fluid">
         <a class="navbar-brand" href="public/img/logo-web-azul-negro.png">
         <img src="img/logo-web-azul-negro.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
-        LSV
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -34,8 +33,8 @@
                 <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="pdf/Instructivo_pianoByOLSV.pdf">Piano PDF</a>
                 </li>
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="formRifas.html">Creación de rifas</a>
+                <li class="nav-item" id="itemRifa">
+                <a class="nav-link active" href="#" data-bs-toggle="modal" data-bs-target="#modalRifas">Creación de rifas</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/">Inicio</a>
@@ -56,13 +55,29 @@
         <div class="input-group mb-3">
             <label class="input-group-text" for="inputGroupSelect01">Promovida por:</label>
                 <select class="form-select" id="inputGroupSelect01">
-                    <option selected>......</option>
-                    <option>Sociedad de jovenes</option>
-                    <option>Sociedad de embajadores</option>
-                    <option>Sociedad de colaboradoras</option>
+                    <option selected>Selecciona una opción</option>
+                    <option>sociedad de jovenes</option>
+                    <option>sociedad de embajadores</option>
+                    <option>sociedad de colaboradoras</option>
+                    <option>escuela dominical</option>
+                    <option>organización general</option>
+                    <option>organización pastoral</option>
+                    <option>directiva de pastores</option>
+                    <option>directiva de musica</option>
                 </select>
         </div>
         <small id="errorPromotor" class="text-danger"></small>
+        <div class="mb-3 position-relative">
+            <label for="exampleInputEmail1" class="form-label">A beneficio de:</label>
+            <input type="text" class="form-control" id="beneficio" maxlength="18">
+            <div id="tooltipBeneficio" class="tooltip-beneficio">Máximo 18 caracteres</div>
+            <small id="errorBeneficio" class="text-danger"></small>
+        </div>
+        <div class="mb-3">
+            <label for="fecha" class="form-label">Fecha:</label>
+            <input type="date" class="form-control" id="fecha">
+            <small id="errorFecha" class="text-danger"></small>
+        </div>
         <div class="input-group mb-3">
             <span class="input-group-text">valor de la lista ($)</span>
             <input 
@@ -75,11 +90,6 @@
             <span class="input-group-text">.00</span>
         </div>
         <small id="errorValor" class="text-danger"></small>
-        <div class="mb-3">
-                <label for="fecha" class="form-label">Fecha:</label>
-                <input type="date" class="form-control" id="fecha">
-                <small id="errorFecha" class="text-danger"></small>
-        </div>
         <div class="mb-3">
             <label for="formFile" class="form-label">Imagen:</label>
             <input class="form-control" type="file" id="imagen" accept=".jpg,.jpeg,.png">
@@ -94,49 +104,65 @@
             © 2026 Oscar Segura. Todos los derechos reservados.
         </p>
     </footer>
-    <!-- Modal PDF -->
-    <!-- <div class="modal fade" id="pdfModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+    <!-- Modal  -->
+  <div class="modal fade" id="modalRifas" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
 
-            <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title">
+                      Seleccione un diseño de rifa
+                  </h5>
 
-                <div class="modal-header">
-                    <h5 class="modal-title">
-                        Documento generado
-                    </h5>
+                  <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal">
+                  </button>
+              </div>
 
-                    <button type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal">
-                    </button>
-                </div>
+              <div class="modal-body">
 
-                <div class="modal-body text-center">
-                    <p class="mt-3">
-                        ¿Quieres convertir tu documento a PDF?
-                    </p>
-                </div>
+                  <div class="row">
 
-                <div class="modal-footer">
+                      <div class="col-md-6 text-center">
 
-                    <button type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal">
-                        No
-                    </button>
+                          <a href="formRifas.html">
+                              <img
+                                  src="img/Rifa1.png"
+                                  class="img-fluid plantilla-rifa"
+                                  alt="Diseño 1">
+                          </a>
 
-                    <button type="button"
-                        class="btn btn-primary"
-                        id="convertPdfBtn">
-                        Sí
-                    </button>
+                          <h6 class="mt-2">
+                              Diseño clásico
+                          </h6>
 
-                </div>
+                      </div>
 
-            </div>
+                      <div class="col-md-6 text-center">
 
-        </div>
-    </div> -->
+                          <a href="formRifas1.html">
+                              <img
+                                  src="img/Rifa2.png"
+                                  class="img-fluid plantilla-rifa"
+                                  alt="Diseño 2">
+                          </a>
+
+                          <h6 class="mt-2">
+                              Diseño detallado
+                          </h6>
+
+                      </div>
+
+                  </div>
+
+              </div>
+
+          </div>
+      </div>
+  </div>
+
 
     <script src="js/form.js"></script>
     <script src="js/buscador.js"></script>

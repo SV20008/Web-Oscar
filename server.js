@@ -31,6 +31,7 @@ app.post("/generar", upload.single("imagen"), (req, res) => {
     const {
         articulo,
         promotor,
+        beneficio,
         valor,
         fecha
     } = req.body;
@@ -133,6 +134,7 @@ app.post("/generar", upload.single("imagen"), (req, res) => {
         doc.render({
             articulo,
             promotor,
+            beneficio,
             valor: valorFormateado,
             fecha: fechaFormateada,
             imagen: rutaImagen
@@ -182,6 +184,124 @@ app.post("/generar", upload.single("imagen"), (req, res) => {
 
         res.status(500).send(error.message);
     }
+});
+
+//FOMRULARIO RIFAS 1
+app.post("/generarRifa1", upload.single("imagen"), (req, res) => {
+
+    const {
+        articulo,
+        promotor,
+        lugar,
+        beneficio,
+        fecha,
+        valorlista,
+        valornumero
+    } = req.body;
+
+    try {
+
+        const valorListaFormateado =
+            Number(valorlista).toFixed(2);
+
+        const valorNumeroFormateado =
+            Number(valornumero).toFixed(2);
+
+        let fechaFormateada = "";
+
+        if (fecha) {
+
+            const [anio, mes, dia] = fecha.split("-");
+
+            const fechaObj =
+                new Date(Number(anio), Number(mes) - 1, Number(dia));
+
+            const diasSemana = [
+                "Domingo",
+                "Lunes",
+                "Martes",
+                "Miércoles",
+                "Jueves",
+                "Viernes",
+                "Sábado"
+            ];
+
+            const nombreDia =
+                diasSemana[fechaObj.getDay()];
+
+            fechaFormateada =
+                `${nombreDia} ${dia}/${mes}/${anio}`;
+        }
+
+        const rutaPlantilla =
+            path.resolve("plantilla3.docx");
+
+        const content =
+            fs.readFileSync(rutaPlantilla, "binary");
+
+        const imageModule = new ImageModule({
+
+            getImage: function (tagValue) {
+                return fs.readFileSync(tagValue);
+            },
+
+            getSize: function () {
+                return [60, 60];
+            }
+
+        });
+
+        const zip = new PizZip(content);
+
+        const doc = new Docxtemplater(zip, {
+            modules: [imageModule],
+            paragraphLoop: true,
+            linebreaks: true
+        });
+
+        let rutaImagen = "";
+
+        if (req.file) {
+            rutaImagen = path.resolve(req.file.path);
+        }
+
+        doc.render({
+
+            articulo,
+            promotor,
+            lugar,
+            beneficio,
+            fecha: fechaFormateada,
+            valorlista: valorListaFormateado,
+            valornumero: valorNumeroFormateado,
+            imagen: rutaImagen
+
+        });
+
+        const buffer = doc.getZip().generate({
+            type: "nodebuffer"
+        });
+
+        res.setHeader(
+            "Content-Type",
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        );
+
+        res.setHeader(
+            "Content-Disposition",
+            "attachment; filename=rifa.docx"
+        );
+
+        res.send(buffer);
+
+    } catch (error) {
+
+        console.log(error);
+
+        res.status(500).send(error.message);
+
+    }
+
 });
 
 // Iniciar servidor

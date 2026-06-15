@@ -4,12 +4,14 @@ document.getElementById("formRifas").addEventListener("submit", async (e) => {
     // Limpiar errores anteriores
     document.getElementById("errorArticulo").textContent = "";
     document.getElementById("errorPromotor").textContent = "";
+    document.getElementById("errorBeneficio").textContent = "";
     document.getElementById("errorValor").textContent = "";
     document.getElementById("errorFecha").textContent = "";
     document.getElementById("errorImagen").textContent = "";
 
     const articulo = document.getElementById("articulo").value.trim();
     const promotor = document.getElementById("inputGroupSelect01").value;
+    const beneficio = document.getElementById("beneficio").value.trim();
     const valor = document.getElementById("valorlista").value.trim();
     const fecha = document.getElementById("fecha").value;
     const archivo = document.getElementById("imagen").files[0];
@@ -30,6 +32,12 @@ document.getElementById("formRifas").addEventListener("submit", async (e) => {
         hayErrores = true;
     }
 
+    //Validad beneficio
+    if (beneficio === "") {
+        document.getElementById("errorBeneficio").textContent =
+            "Debe ingresar el beneficio de la rifa.";
+        hayErrores = true;
+    }
     // Validar valor
     if (valor === "") {
         document.getElementById("errorValor").textContent =
@@ -79,7 +87,10 @@ document.getElementById("formRifas").addEventListener("submit", async (e) => {
         document.getElementById("inputGroupSelect01").selectedOptions[0].text
     );
 
+    //enviar datos al servidor
     formData.append("valor", valor);
+
+    formData.append("beneficio", beneficio);
 
     formData.append("fecha", fecha);
 
@@ -153,3 +164,23 @@ document.getElementById("btnPdf").addEventListener("click", () => {
     window.location.href = "https://www.ilovepdf.com/word_to_pdf";
 });
 
+// Tooltip para límite de caracteres
+const beneficio = document.getElementById("beneficio");
+const tooltip = document.getElementById("tooltipBeneficio");
+
+if (beneficio && tooltip) {
+
+    beneficio.addEventListener("input", () => {
+
+        if (beneficio.value.length === 18) {
+
+            tooltip.style.display = "block";
+
+            setTimeout(() => {
+                tooltip.style.display = "none";
+            }, 3000);
+
+        }
+
+    });
+}
