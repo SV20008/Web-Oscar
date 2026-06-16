@@ -105,16 +105,16 @@ body {
 
 .plantilla-rifa:hover{
     transform: scale(1.05);
-    border-color: #0d6efd;
+    border-color: #1b3358;
     box-shadow: 0 0 20px rgba(13,110,253,.5);
 }
 .modal-header{
-    background: #022457;
+    background: #313439;
     color: white;
 }
 
 .modal-body{
-    background: #f8f9fa;
+    background: #aebfd1;
 }
 .modal-title{
     width: 100%;
