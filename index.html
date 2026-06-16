@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -26,18 +27,18 @@
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="d-flex mt-3">
-              <input class="form-control" type="search" placeholder="Filtro de busqueda" id="searchInput" aria-label="Search"/>
+                <input class="form-control" type="search" placeholder="Filtro de busqueda" id="searchInput" aria-label="Search"/>
             </div>
             <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item" id="itemPiano">
-                <a class="nav-link active" aria-current="page" href="pdf/Instructivo_pianoByOLSV.pdf">Piano PDF</a>
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="pdf/Instructivo_pianoByOLSV.pdf"><i class="bi bi-file-earmark-pdf-fill me-2"></i>Piano PDF</a>
                 </li>
                 <li class="nav-item" id="itemRifa">
-                <a class="nav-link active" href="#" data-bs-toggle="modal" data-bs-target="#modalRifas">Creación de rifas</a>
+                <a class="nav-link active" href="#" data-bs-toggle="modal" data-bs-target="#modalRifas"><i class="bi bi-ticket-perforated-fill me-2"></i>Creación de rifas</a>
                 </li>
-                <li class="nav-item" id="itemInicio">
-                <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/"><i class="bi bi-house-door-fill me-2"></i>Inicio</a>
                 </li>
             </ul>
             <small id="sinResultados" class="text-danger"></small>
@@ -46,30 +47,110 @@
         </div>
     </nav>
 
-  <div id="carouselExampleInterval" class="carousel slide carrusel-principal" data-bs-ride="carousel" carousel" data-bs-interval="3000">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="img/concert.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="img/pianoimage.jpg" class="d-block w-100" alt="...">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+<section class="container mt-5">
 
-  <footer class="bg-dark text-white text-center p-3 mt-5">
-      <p class="mb-0 small text-secondary">
-          © 2026 Oscar Segura. Todos los derechos reservados.
-      </p>
-  </footer>
+    <h2 class="text-center mb-4 cuadricula-principal-videos">
+        GRABACIONES DE EVENTOS
+    </h2>
+
+    <div class="row g-4">
+
+
+            <!-- Video 1 -->
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+
+                    <div class="ratio ratio-16x9">
+                        <video controls>
+                            <source src="videos/Video1.mp4" type="video/mp4">
+                            Tu navegador no soporta video.
+                        </video>
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Se oye una lluvia
+                        </h5>
+
+                        <p class="card-text">
+                            Intérprete Oscar Segura en IPCS Santa Lucía.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+
+                    <div class="ratio ratio-16x9">
+                        <video controls>
+                            <source src="videos/Video2.mp4" type="video/mp4">
+                            Tu navegador no soporta video.
+                        </video>
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Yo tengo un salvador
+                        </h5>
+
+                        <p class="card-text">
+                            Intérprete Oscar Segura en IPCS Santa Lucía.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+
+                    <div class="ratio ratio-16x9">
+                        <video controls>
+                            <source src="videos/Video3.mp4" type="video/mp4">
+                            Tu navegador no soporta video.
+                        </video>
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Grande y maravillosas
+                        </h5>
+
+                        <p class="card-text">
+                            Intérprete Oscar Segura en IPCS Santa Lucía.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="border-top mt-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center py-4">
+                <div>
+                    <img src="img/logo-web-azul-negro.png" width="35">
+                    <span class="mb-3 mb-md-0 text-body-secondary">© 2026 Oscar Segura</span>
+                </div>
+                <div>
+                    <a href="https://www.instagram.com/oscar_l987?igsh=MTNpbm5oeWtrNGl5ZA==" class="text-body-secondary">
+                        <i class="bi bi-instagram fs-2"></i>
+                    </a>
+
+                    <a href="https://www.facebook.com/leonel.segura.50" class="text-body-secondary">
+                        <i class="bi bi-facebook fs-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
   <div class="modal fade" id="modalRifas" tabindex="-1">
       <div class="modal-dialog modal-lg">
