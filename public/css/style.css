@@ -39,7 +39,7 @@ body {
 }
 
 .resultado-encontrado {
-    border: 2px solid #28a745;
+    border: 2px solid #0f61db;
     border-radius: 8px;
     padding: 5px;
     animation: parpadeoResultado 1s infinite;
@@ -48,15 +48,15 @@ body {
 @keyframes parpadeoResultado {
 
     0% {
-        box-shadow: 0 0 5px #28a745;
+        box-shadow: 0 0 5px #0f61db;
     }
 
     50% {
-        box-shadow: 0 0 20px #28a745;
+        box-shadow: 0 0 20px #0f61db;
     }
 
     100% {
-        box-shadow: 0 0 5px #28a745;
+        box-shadow: 0 0 5px #0f61db;
     }
 
 }
