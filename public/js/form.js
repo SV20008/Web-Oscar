@@ -151,9 +151,7 @@ document.getElementById("formRifas").addEventListener("submit", async (e) => {
     }
 });
 
-/* document.getElementById("convertPdfBtn").addEventListener("click", () => {
-    window.location.href = "https://www.ilovepdf.com/word_to_pdf";
-}); */
+
 
 window.addEventListener("load", () => {
     document.getElementById("articulo").focus();
@@ -184,3 +182,4 @@ if (beneficio && tooltip) {
 
     });
 }
+

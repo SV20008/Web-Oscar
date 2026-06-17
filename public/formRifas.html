@@ -32,13 +32,16 @@
             <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="pdf/Instructivo_pianoByOLSV.pdf"><i class="bi bi-file-earmark-pdf-fill me-2"></i>Piano PDF</a>
+                <a class="nav-link active" aria-current="page" href="/"><i class="bi bi-house-door-fill me-2"></i>Inicio</a>
                 </li>
                 <li class="nav-item" id="itemRifa">
                 <a class="nav-link active" href="#" data-bs-toggle="modal" data-bs-target="#modalRifas"><i class="bi bi-ticket-perforated-fill me-2"></i>Creación de rifas</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/"><i class="bi bi-house-door-fill me-2"></i>Inicio</a>
+                <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-file-earmark-pdf-fill me-2"></i>Creación de invitaciones</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="pdf/Instructivo_pianoByOLSV.pdf"><i class="bi bi-file-earmark-pdf-fill me-2"></i>Piano PDF</a>
                 </li>
             </ul>
             <small id="sinResultados" class="text-danger"></small>
@@ -47,16 +50,20 @@
         </div>
     </nav>
 
+
+
     <form class=" formulario-rifa" id="formRifas">
+        <div class="text-center mb-4">
+            <img src="img/logo-web-azul-negro.png" width="80" class="logo-rifa">
+            <h5 class="text-dark mt-3 titulo-rifa">CREACIÓN DE RIFAS</h5>
+        </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Articulo a rifar:</label>
-            <input type="text" class="form-control" id="articulo">
+            <input type="text" class="form-control" id="articulo" placeholder="Artículo a rifar">
             <small id="errorArticulo" class="text-danger"></small>
         </div>
         <div class="input-group mb-3">
-            <label class="input-group-text" for="inputGroupSelect01">Promovida por:</label>
                 <select class="form-select" id="inputGroupSelect01">
-                    <option selected>Seleccione</option>
+                    <option selected disabled>Promovida por</option>
                     <option>sociedad de jovenes</option>
                     <option>sociedad de embajadores</option>
                     <option>sociedad de colaboradoras</option>
@@ -69,8 +76,7 @@
         </div>
         <small id="errorPromotor" class="text-danger"></small>
         <div class="mb-3 position-relative">
-            <label for="exampleInputEmail1" class="form-label">A beneficio de:</label>
-            <input type="text" class="form-control" id="beneficio" maxlength="18">
+            <input type="text" class="form-control" id="beneficio" maxlength="18" placeholder="A beneficio de">
             <div id="tooltipBeneficio" class="tooltip-beneficio">Máximo 18 caracteres</div>
             <small id="errorBeneficio" class="text-danger"></small>
         </div>
@@ -80,14 +86,14 @@
             <small id="errorFecha" class="text-danger"></small>
         </div>
         <div class="input-group mb-3">
-            <span class="input-group-text">valor de la lista ($)</span>
             <input 
                 type="number"
                 class="form-control"
                 id="valorlista"
                 min="1"
                 step="1"
-                aria-label="Amount">
+                aria-label="Amount"
+                placeholder="Valor de la lista ($)">
             <span class="input-group-text">.00</span>
         </div>
         <small id="errorValor" class="text-danger"></small>
