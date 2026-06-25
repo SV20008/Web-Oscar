@@ -142,3 +142,5 @@ document.getElementById("btnPdf").addEventListener("click", () => {
         "https://www.ilovepdf.com/word_to_pdf";
 
 });
+
+document.getElementById("articulo").focus();
