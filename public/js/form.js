@@ -1,3 +1,4 @@
+/* 
 document.getElementById("formRifas").addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -183,3 +184,28 @@ if (beneficio && tooltip) {
     });
 }
 
+*/
+
+/*NUEVO FORM PARA RIFA CLASICO DESCARGA PDF*/
+document.getElementById("btnGenerar").addEventListener("click", function () {
+
+    const imagen = document.getElementById("imagen").files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(e){
+
+        const datos = {
+            articulo: document.getElementById("articulo").value,
+            promovida: document.getElementById("inputGroupSelect01").value,
+            beneficio: document.getElementById("beneficio").value,
+            fecha: formatearFecha(document.getElementById("fecha").value),
+            valor: formatearValor(document.getElementById("valorlista").value),
+            imagen: e.target.result
+        };
+
+        sessionStorage.setItem("rifa", JSON.stringify(datos));
+        location.href = "reporteRifas.html";
+    }
+
+    reader.readAsDataURL(imagen);
+});

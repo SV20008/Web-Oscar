@@ -1,3 +1,4 @@
+/*
 document.getElementById("formRifas").addEventListener("submit", async (e) => {
 
     e.preventDefault();
@@ -144,3 +145,32 @@ document.getElementById("btnPdf").addEventListener("click", () => {
 });
 
 document.getElementById("articulo").focus();
+
+*/ 
+
+/*NUEVO CODIGO RIFAS DESCARGA PDF*/
+document.getElementById("formRifas").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const imagen = document.getElementById("imagen").files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(ev){
+
+        const datos = {
+            articulo: document.getElementById("articulo").value,
+            promovida: document.getElementById("inputGroupSelect01").value,
+            lugar: document.getElementById("lugar").value,
+            beneficio: document.getElementById("beneficio").value,
+            fecha: formatearFecha(document.getElementById("fecha").value),
+            valor: formatearValor(document.getElementById("valorlista").value),
+            valorNumero: formatearValor(document.getElementById("valornumero").value),
+            imagen: ev.target.result
+        };
+
+        sessionStorage.setItem("rifa", JSON.stringify(datos));
+        location.href = "reporteRifas1.html";
+    }
+
+    reader.readAsDataURL(imagen);
+});

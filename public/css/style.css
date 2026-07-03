@@ -209,3 +209,109 @@ body {
 .modal-header .btn-close {
     filter: invert(1);
 }
+
+
+/*TODOS LOS ESTILOS DE LA NUEVA FORMA REPORTE Y DESCARGA PDF*/
+.tabla-rifas {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tabla-rifas td {
+    border: 1px solid #333;
+    padding: 8px;
+    vertical-align: top;
+}
+
+.tabla-rifas .tabla-interna td {
+    border: none !important;
+}
+
+.campo {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.campo span:first-child {
+    white-space: nowrap;
+    font-size: 16pt;
+}
+
+.campo .linea {
+    flex: 1;
+    border-bottom: 1px solid #333;
+    height: 13px;
+}
+
+.tabla-rifas, .tabla-interna {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16pt;
+    line-height: 1.35;
+    font-weight: 600;
+    -webkit-text-stroke: 0.1px transparent;
+}
+
+.tabla-interna td u {
+    text-decoration: underline;
+}
+
+.col-imagen {
+    width: 100px;
+}
+
+.col-imagen img {
+    width: 100px;
+    max-width: 100px;
+    height: auto;
+    display: block;
+}
+
+.fila-campos {
+    padding-bottom: 20px !important;
+}
+
+
+.titulo-boleto {
+    font-size: 20pt;
+    display: inline-block;
+    border-bottom: 1.5px solid #000;
+    padding-bottom: 2px;
+}
+.contenedor-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+#paginaRifas {
+    width: 1100px;
+    max-width: none;
+}
+
+.fecha-completa {
+    white-space: nowrap;
+    padding: 0 8px !important;
+    line-height: 1.5;
+}
+.tabla-interna td {
+    border: none;
+    padding-bottom: 0;
+}
+
+.linea-numerada {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.linea-numerada .linea {
+    flex: 1;
+    border-bottom: 1px solid #333;
+    height: 13px;
+}
+
+.texto-descripcion {
+    text-align: justify;
+}
