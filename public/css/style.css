@@ -181,6 +181,10 @@ body {
     }
 }
 
+
+
+
+
 .plantilla-rifa{
     border-radius: 10px;
     border: 3px solid transparent;
@@ -210,7 +214,100 @@ body {
     filter: invert(1);
 }
 
+.inicio-hero {
+    margin-top: 110px;
+    margin-bottom: 40px;
+}
 
+.inicio-titulo {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: #212529;
+}
+
+.inicio-subtitulo {
+    color: #6c757d;
+    font-size: 0.95rem;
+}
+
+.tarjeta-opcion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: #212529;
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 14px;
+    padding: 28px 12px;
+    height: 100%;
+    position: relative;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.tarjeta-opcion:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(33, 37, 41, 0.12);
+    border-color: #212529;
+}
+
+.tarjeta-icono {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #212529;
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 14px;
+    transition: background 0.18s ease;
+}
+
+.tarjeta-opcion:hover .tarjeta-icono {
+    background: #0d6efd;
+}
+
+.tarjeta-titulo {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.tarjeta-desc {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-bottom: 0;
+}
+
+.tarjeta-proximamente {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.tarjeta-proximamente:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: #e9ecef;
+}
+
+.tarjeta-proximamente:hover .tarjeta-icono {
+    background: #212529;
+}
+
+.badge-proximamente {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ffc107;
+    color: #212529;
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 20px;
+}
 /*TODOS LOS ESTILOS DE LA NUEVA FORMA REPORTE Y DESCARGA PDF*/
 .tabla-rifas {
     border-collapse: collapse;
@@ -314,4 +411,104 @@ body {
 
 .texto-descripcion {
     text-align: justify;
+}
+
+
+.marca-agua {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    background: url("../img/Ciudad-de-Sion.jpg") no-repeat center;
+    background-size: contain;
+    opacity: 0.08;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.invitacion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+
+.logo-invitacion {
+    width: 80px;
+}
+
+.titulo-invitacion {
+    text-align: center;
+    flex: 1;
+}
+
+
+.linea-header {
+    border-top: 2px solid #212529;
+    margin: 10px 0 20px 0;
+}
+
+.invitacion-checks, .invitacion-cuerpo, .invitacion-versiculo, .invitacion-firmas {
+    position: relative;
+    z-index: 1;
+}
+
+
+.destacado {
+    font-weight: bold;
+}
+
+
+
+.linea-firma {
+    display: block;
+    border-bottom: 1px solid #333;
+    width: 160px;
+    margin-bottom: 4px;
+}
+
+.invitacion-pagina {
+    width: 800px;
+    margin: 0 auto;
+    padding: 40px 50px;
+    position: relative;
+    font-family: "Times New Roman", Times, serif;
+    background: #fff;
+    overflow: hidden;
+    font-size: 16pt;
+}
+
+.titulo-invitacion h2 {
+    color: #4a7ab5;
+    font-size: 26pt;
+    font-weight: 700;
+    margin: 0;
+}
+
+.titulo-invitacion h3 {
+    color: #4a7ab5;
+    font-size: 22pt;
+    font-weight: 700;
+    margin: 0;
+}
+.invitacion-cuerpo p, .invitacion-checks p {
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: 16pt;
+}
+
+.invitacion-versiculo {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 16pt;
+}
+
+.invitacion-firmas {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    margin-top: 185px;
+    font-size: 13pt;
 }

@@ -4,7 +4,7 @@ function formatearFecha(fechaISO) {
 
     const dias = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
     const meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio",
-                    "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+                    "julio", "agosto", "sept", "octubre", "nov", "dic"];
 
     const nombreDia = dias[fecha.getDay()];
     const nombreMes = meses[fecha.getMonth()];
@@ -30,3 +30,4 @@ function generarNombreArchivo(prefijo = "rifa") {
 
     return `${prefijo}-${articulo}.pdf`;
 }
+

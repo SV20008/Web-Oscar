@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <title>Formulario de rifas</title>
+    <title>Videos</title>
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark fixed-top">
@@ -51,58 +51,90 @@
         </div>
     </nav>
 
-    <form class=" formulario-rifa" id="formRifas">
-        <div class="text-center mb-4">
-            <img src="img/logo-web-azul-negro.png" width="80" class="logo-rifa">
-            <h5 class="text-dark mt-3 titulo-rifa">CREACIÓN DE RIFAS</h5>
+<section class="container mt-5">
+
+    <h5 class="text-center mb-4 cuadricula-principal-videos titulo-rifa">
+        GRABACIONES DE EVENTOS
+    </h5>
+
+    <div class="row g-4">
+
+
+            <!-- Video 1 -->
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+
+                    <div class="ratio ratio-16x9">
+                        <video controls>
+                            <source src="videos/Video1.mp4" type="video/mp4">
+                            Tu navegador no soporta video.
+                        </video>
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Se oye una lluvia
+                        </h5>
+
+                        <p class="card-text">
+                            Intérprete Oscar Segura en IPCS Santa Lucía.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+
+                    <div class="ratio ratio-16x9">
+                        <video controls>
+                            <source src="videos/Video2.mp4" type="video/mp4">
+                            Tu navegador no soporta video.
+                        </video>
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Yo tengo un salvador
+                        </h5>
+
+                        <p class="card-text">
+                            Intérprete Oscar Segura en IPCS Santa Lucía.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+
+                    <div class="ratio ratio-16x9">
+                        <video controls>
+                            <source src="videos/Video3.mp4" type="video/mp4">
+                            Tu navegador no soporta video.
+                        </video>
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Grande y maravillosas
+                        </h5>
+
+                        <p class="card-text">
+                            Intérprete Oscar Segura en IPCS Santa Lucía.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
-        <div class="mb-3">
-            <input type="text" class="form-control" id="articulo" placeholder="Articulo a rifar">
-            <small id="errorArticulo" class="text-danger"></small>
-        </div>
-        <div class="input-group mb-3">
-                <select class="form-select" id="inputGroupSelect01">
-                    <option selected disabled>Promovida por</option>
-                    <option>sociedad de jovenes</option>
-                    <option>sociedad de embajadores</option>
-                    <option>sociedad de colaboradoras</option>
-                    <option>escuela dominical</option>
-                    <option>organización general</option>
-                    <option>organización pastoral</option>
-                    <option>directiva de pastores</option>
-                    <option>directiva de musica</option>
-                </select>
-        </div>
-        <small id="errorPromotor" class="text-danger"></small>
-        <div class="mb-3 position-relative">
-            <input type="text" class="form-control" id="lugar" maxlength="20" placeholder="Lugar de la iglesia">
-            <small id="errorLugar" class="text-danger"></small>
-        </div>
-        <div class="mb-3 position-relative">
-            <input type="text" class="form-control" id="beneficio" maxlength="18" placeholder="A beneficio de">
-            <small id="errorBeneficio" class="text-danger"></small>
-        </div>
-        <div class="mb-3">
-                <label for="fecha" class="form-label">Fecha:</label>
-                <input type="date" class="form-control" id="fecha">
-                <small id="errorFecha" class="text-danger"></small>
-        </div>
-        <div class="input-group mb-3">
-            <input type="number" class="form-control" id="valorlista" min="1" step="1" aria-label="Amount" placeholder="Valor de la lista ($)">
-            <span class="input-group-text">.00</span>
-        </div>
-        <div class="input-group mb-3">
-            <input type="number" class="form-control" id="valornumero" min="0.01" step="0.01" aria-label="Amount" placeholder="Valor del numero ($)">
-            <span class="input-group-text">0.00</span>
-        </div>
-        <small id="errorValorNumero" class="text-danger"></small>
-        <div class="mb-3">
-            <label for="formFile" class="form-label">Imagen:</label>
-            <input class="form-control" type="file" id="imagen" accept=".jpg,.jpeg,.png">
-            <small id="errorImagen" class="text-danger"></small>
-        </div>
-        <button type="submit" class="btn btn-primary">Generar</button>
-    </form>
+
+    </section>
 
     <footer class="border-top mt-5">
         <div class="container">
@@ -124,8 +156,7 @@
         </div>
     </footer>
 
-    <!-- Modal  -->
-      <div class="modal fade" id="modalRifas" tabindex="-1">
+  <div class="modal fade" id="modalRifas" tabindex="-1">
       <div class="modal-dialog modal-lg">
           <div class="modal-content">
 
@@ -182,8 +213,9 @@
           </div>
       </div>
   </div>
-    <script src="js/utils.js"></script>
-    <script src="js/formRifas1.js"></script>
-    <script src="js/buscador.js"></script>
+
+
+
+  <script src="public/js/buscador.js"></script>
 </body>
 </html>

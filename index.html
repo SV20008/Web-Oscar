@@ -36,10 +36,10 @@
                 <a class="nav-link active" aria-current="page" href="/"><i class="bi bi-house-door-fill me-2"></i>Inicio</a>
                 </li>
                 <li class="nav-item" id="itemRifa">
-                <a class="nav-link active" href="#" data-bs-toggle="modal" data-bs-target="#modalRifas"><i class="bi bi-ticket-perforated-fill me-2"></i>Creación de rifas</a>
+                <a class="nav-link active" href="#" data-bs-toggle="modal" data-bs-target="#modalRifas"><i class="bi bi-file-earmark-text-fill me-2"></i>Creación de rifas</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-file-earmark-pdf-fill me-2"></i>Creación de invitaciones</a>
+                <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-envelope-plus-fill me-2"></i>Creación de invitaciones</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="pdf/Instructivo_pianoByOLSV.pdf"><i class="bi bi-file-earmark-pdf-fill me-2"></i>Piano PDF</a>
@@ -51,90 +51,58 @@
         </div>
     </nav>
 
-<section class="container mt-5">
+<div class="container inicio-container">
 
-    <h5 class="text-center mb-4 cuadricula-principal-videos titulo-rifa">
-        GRABACIONES DE EVENTOS
-    </h5>
+    <div class="text-center inicio-hero">
+        <h2 class="inicio-titulo">¿Qué necesitas hacer hoy?</h2>
+        <p class="inicio-subtitulo">Elige una herramienta para empezar</p>
+    </div>
 
-    <div class="row g-4">
+        <div class="row g-4 grid-opciones">
 
-
-            <!-- Video 1 -->
-            <div class="col-md-4">
-                <div class="card shadow-sm h-100">
-
-                    <div class="ratio ratio-16x9">
-                        <video controls>
-                            <source src="videos/Video1.mp4" type="video/mp4">
-                            Tu navegador no soporta video.
-                        </video>
+            <div class="col-6 col-md-3">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#modalRifas" class="tarjeta-opcion">
+                    <div class="tarjeta-icono">
+                        <i class="bi bi-file-earmark-text-fill"></i>
                     </div>
-
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            Se oye una lluvia
-                        </h5>
-
-                        <p class="card-text">
-                            Intérprete Oscar Segura en IPCS Santa Lucía.
-                        </p>
-                    </div>
-
-                </div>
+                    <h6 class="tarjeta-titulo">Creación de rifas</h6>
+                    <p class="tarjeta-desc">Genera y descarga boletos en PDF</p>
+                </a>
             </div>
 
-            <!-- Video 2 -->
-            <div class="col-md-4">
-                <div class="card shadow-sm h-100">
-
-                    <div class="ratio ratio-16x9">
-                        <video controls>
-                            <source src="videos/Video2.mp4" type="video/mp4">
-                            Tu navegador no soporta video.
-                        </video>
+            <div class="col-6 col-md-3">
+                <a href="formInvitacion.html" class="tarjeta-opcion">
+                    <div class="tarjeta-icono">
+                        <i class="bi bi-envelope-plus-fill"></i>
                     </div>
-
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            Yo tengo un salvador
-                        </h5>
-
-                        <p class="card-text">
-                            Intérprete Oscar Segura en IPCS Santa Lucía.
-                        </p>
-                    </div>
-
-                </div>
+                    <h6 class="tarjeta-titulo">Creación de invitaciones</h6>
+                    <p class="tarjeta-desc">Diseña invitaciones para tus eventos</p>
+                </a>
             </div>
 
-            <!-- Video 3 -->
-            <div class="col-md-4">
-                <div class="card shadow-sm h-100">
-
-                    <div class="ratio ratio-16x9">
-                        <video controls>
-                            <source src="videos/Video3.mp4" type="video/mp4">
-                            Tu navegador no soporta video.
-                        </video>
+            <div class="col-6 col-md-3">
+                <a href="pdf/Instructivo_pianoByOLSV.pdf" class="tarjeta-opcion">
+                    <div class="tarjeta-icono">
+                        <i class="bi bi-file-earmark-pdf-fill"></i>
                     </div>
+                    <h6 class="tarjeta-titulo">Piano PDF</h6>
+                    <p class="tarjeta-desc">Instructivo de piano descargable</p>
+                </a>
+            </div>
 
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            Grande y maravillosas
-                        </h5>
-
-                        <p class="card-text">
-                            Intérprete Oscar Segura en IPCS Santa Lucía.
-                        </p>
+            <div class="col-6 col-md-3">
+                <a href="videos.html" class="tarjeta-opcion">
+                    <div class="tarjeta-icono">
+                        <i class="bi bi-camera-video-fill"></i>
                     </div>
-
-                </div>
+                    <h6 class="tarjeta-titulo">Grabaciones de eventos</h6>
+                    <p class="tarjeta-desc">Videos de interpretaciones e IPCS</p>
+                </a>
             </div>
 
         </div>
 
-    </section>
+    </div>
 
     <footer class="border-top mt-5">
         <div class="container">

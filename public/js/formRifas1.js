@@ -148,6 +148,7 @@ document.getElementById("articulo").focus();
 
 */ 
 
+
 /*NUEVO CODIGO RIFAS DESCARGA PDF*/
 document.getElementById("formRifas").addEventListener("submit", function (e) {
     e.preventDefault();
@@ -169,8 +170,26 @@ document.getElementById("formRifas").addEventListener("submit", function (e) {
         };
 
         sessionStorage.setItem("rifa", JSON.stringify(datos));
+        limpiarFormulario();
         location.href = "reporteRifas1.html";
     }
 
     reader.readAsDataURL(imagen);
+});
+
+
+function limpiarFormulario() {
+    document.getElementById("articulo").value = "";
+    document.getElementById("inputGroupSelect01").selectedIndex = 0;
+    document.getElementById("lugar").value= "";
+    document.getElementById("beneficio").value = "";
+    document.getElementById("fecha").value = "";
+    document.getElementById("valorlista").value = "";
+    document.getElementById("valornumero").value = "";
+    document.getElementById("imagen").value = "";
+}
+
+// Focus automático en el primer campo al cargar la página
+window.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("articulo").focus();
 });

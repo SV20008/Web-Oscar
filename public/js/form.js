@@ -159,10 +159,9 @@ window.addEventListener("load", () => {
 });
 
 
-document.getElementById("btnPdf").addEventListener("click", () => {
-    window.location.href = "https://www.ilovepdf.com/word_to_pdf";
-});
 
+
+*/
 // Tooltip para límite de caracteres
 const beneficio = document.getElementById("beneficio");
 const tooltip = document.getElementById("tooltipBeneficio");
@@ -184,7 +183,7 @@ if (beneficio && tooltip) {
     });
 }
 
-*/
+
 
 /*NUEVO FORM PARA RIFA CLASICO DESCARGA PDF*/
 document.getElementById("btnGenerar").addEventListener("click", function () {
@@ -204,8 +203,25 @@ document.getElementById("btnGenerar").addEventListener("click", function () {
         };
 
         sessionStorage.setItem("rifa", JSON.stringify(datos));
+
+        limpiarFormulario();
+
         location.href = "reporteRifas.html";
     }
 
     reader.readAsDataURL(imagen);
+});
+
+function limpiarFormulario() {
+    document.getElementById("articulo").value = "";
+    document.getElementById("inputGroupSelect01").selectedIndex = 0;
+    document.getElementById("beneficio").value = "";
+    document.getElementById("fecha").value = "";
+    document.getElementById("valorlista").value = "";
+    document.getElementById("imagen").value = "";
+}
+
+// Focus automático en el primer campo al cargar la página
+window.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("articulo").focus();
 });

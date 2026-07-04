@@ -2,7 +2,7 @@ document.getElementById("btnPdf").onclick = async () => {
 
     const area = document.getElementById("paginaRifas");
     const canvas = await html2canvas(area, { scale: 2 });
-    const img = canvas.toDataURL("image/png");
+    const img = canvas.toDataURL("image/jpeg", 0.85);
 
     const { jsPDF } = window.jspdf;
     const pdf = new jsPDF("p", "mm", "letter");
@@ -24,7 +24,7 @@ document.getElementById("btnPdf").onclick = async () => {
     const x = (pageWidth - imgWidth) / 2;
     const y = (pageHeight - imgHeight) / 2;
 
-    pdf.addImage(img, "PNG", x, y, imgWidth, imgHeight);
+    pdf.addImage(img, "JPEG", x, y, imgWidth, imgHeight);
 
     pdf.save(generarNombreArchivo("rifa-detallada"));
 };
