@@ -512,3 +512,162 @@ body {
     margin-top: 185px;
     font-size: 13pt;
 }
+
+/* ===== PÁGINA ACERCA DE ===== */
+
+.acerca-container {
+    max-width: 720px;
+    margin-top: 110px;
+    margin-bottom: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.acerca-hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.acerca-avatar {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid #212529;
+    box-shadow: 0 10px 25px rgba(33, 37, 41, 0.15);
+    overflow: hidden;
+}
+
+.acerca-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+}
+
+.acerca-nombre {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.4rem, 5vw, 1.9rem);
+    color: #212529;
+    margin-bottom: 8px;
+    word-wrap: break-word;
+}
+
+.acerca-ubicacion {
+    color: #6c757d;
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+    padding: 0 10px;
+}
+
+.acerca-ubicacion i {
+    color: #0d6efd;
+    margin-right: 4px;
+}
+
+.acerca-roles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 10px;
+}
+
+.acerca-rol {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 30px;
+    padding: 7px 14px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #212529;
+}
+
+.acerca-rol i {
+    color: #0d6efd;
+}
+
+.acerca-cuerpo {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 14px;
+    padding: 32px;
+    box-shadow: 0 10px 24px rgba(33, 37, 41, 0.06);
+}
+
+.acerca-cuerpo p {
+    color: #495057;
+    font-size: 1.02rem;
+    line-height: 1.75;
+    margin-bottom: 18px;
+}
+
+.acerca-cuerpo p:last-child {
+    margin-bottom: 0;
+}
+
+.acerca-firma {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px dashed #ced4da;
+}
+
+.acerca-comilla {
+    font-size: 1.8rem;
+    color: #0d6efd;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.acerca-firma p {
+    font-family: "Poppins", sans-serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #212529;
+    margin-bottom: 10px;
+}
+
+.acerca-firma-nombre {
+    display: block;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 576px) {
+    .acerca-cuerpo {
+        padding: 24px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .acerca-container {
+        margin-top: 90px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .acerca-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .acerca-nombre {
+        font-size: 1.4rem;
+    }
+
+    .acerca-cuerpo {
+        padding: 20px 16px;
+    }
+
+    .acerca-cuerpo p {
+        font-size: 0.95rem;
+    }
+}
