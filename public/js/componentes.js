@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <a class="nav-link active" aria-current="page" href="pdf/Instructivo_pianoByOLSV.pdf"><i class="bi bi-file-earmark-pdf-fill me-2"></i>Piano PDF</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="videos.html"><i class="bi bi-camera-video-fill me-2"></i>Grabacion de eventos</a>
+                    <a class="nav-link active" aria-current="page" href="pdf/Coros_iglesia1.pdf"><i class="bi bi-clipboard-check-fill me-2"></i>Lista de coros alegres</a>
                     </li>
                 </ul>
                 <small id="sinResultados" class="text-danger"></small>
